@@ -26,5 +26,6 @@ export const useNetworkConfig = () => {
       CHAIN_ID_GAS_CONFIG[
         chainId?.toString() as keyof typeof CHAIN_ID_GAS_CONFIG
       ],
+    BIRTHDAY_CONTRACT_ADDRESS: "0x2957642D8898225115b79e0bDEc0120AD2e03679",
   };
 };

@@ -48,6 +48,11 @@ export default function Home() {
                   Text Encrypt
                 </div>
               </Link>
+              <Link href="/birthday" className="w-full md:w-[200px]">
+                <div className="w-full md:w-[200px] py-3 text-gray-900 border border-gray-200 hover:border-gray-400 transition-colors text-center font-funnel-display">
+                  Birthday Gifts
+                </div>
+              </Link>
             </div>
           </div>
         </div>

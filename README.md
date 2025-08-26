@@ -5,6 +5,7 @@ A Next.js web application for time-locked encryption using blockchain technology
 ## 🌟 Features
 
 - **Time-locked Encryption**: Encrypt messages that automatically decrypt at a future date
+- **Birthday Gift Cards**: Create time-locked birthday messages for specific recipients
 - **Multi-chain Support**: Compatible with multiple blockchain networks including Filecoin, Base, Arbitrum, and Optimism
 - **Wallet Integration**: Connect with popular crypto wallets via RainbowKit
 - **Explorer Interface**: View and track your encrypted messages and decryption status
@@ -58,22 +59,32 @@ npm run dev
 
 ## 🔒 How It Works
 
+### Text Encryption
 1. **Connect Wallet**: Connect your crypto wallet to the application
 2. **Enter Message**: Type the message you want to encrypt
 3. **Set Time**: Choose when the message should be decryptable
 4. **Encrypt**: The app calculates the target block height and encrypts your message
 5. **Explorer**: View your encrypted messages and their decryption status
 
+### Birthday Gift Cards
+1. **Create Gift**: Enter birthday message, set birthday date, and specify recipient address
+2. **Auto-Lock**: System converts birthday date to target block height for automatic unlocking
+3. **Send Gift**: Gift card is created and locked in the smart contract
+4. **Recipient Access**: Recipients can view their gift cards and claim unlocked messages
+
 ## 📁 Project Structure
 
 ```
 ├── app/                    # Next.js app directory
 │   ├── blocklock/         # Main encryption interface
+│   ├── birthday/          # Birthday gift card interface
 │   ├── layout.tsx         # Root layout component
 │   └── page.tsx           # Homepage
 ├── components/            # Reusable UI components
 ├── hooks/                 # Custom React hooks
 │   ├── useEncrypt.ts      # Encryption logic
+│   ├── useBirthdayGift.ts # Birthday gift card logic
+│   ├── useBirthdayExplorer.ts # Gift card explorer
 │   ├── useEthers.ts       # Ethers.js integration
 │   ├── useExplorer.ts     # Message explorer functionality
 │   └── useNetworkConfig.ts # Network configurations
@@ -93,9 +104,10 @@ The app interacts with deployed Blocklock smart contracts on various networks. E
 
 ## 🎨 UI Components
 
-- **Landing Page**: Introduction and navigation to encryption tool
+- **Landing Page**: Introduction and navigation to encryption tools
 - **Blocklock Interface**: Main encryption/decryption interface with tabs
-- **Explorer**: View encrypted messages with block numbers and status
+- **Birthday Gift Interface**: Create and manage birthday gift cards with recipient targeting
+- **Explorer**: View encrypted messages and gift cards with block numbers and status
 - **Wallet Connection**: RainbowKit integration for wallet management
 
 ## 📝 Scripts
@@ -104,6 +116,11 @@ The app interacts with deployed Blocklock smart contracts on various networks. E
 - `npm run build`: Build for production
 - `npm run start`: Start production server
 - `npm run lint`: Run ESLint
+- `npm run compile`: Compile smart contracts with Hardhat
+- `npm run deploy:calibration`: Deploy contracts to Filecoin Calibration
+- `npm run deploy:arbitrum`: Deploy contracts to Arbitrum Sepolia
+- `npm run deploy:optimism`: Deploy contracts to Optimism Sepolia
+- `npm run deploy:base`: Deploy contracts to Base Sepolia
 
 ## 🤝 Contributing
 

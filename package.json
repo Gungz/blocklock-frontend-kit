@@ -6,12 +6,18 @@
     "dev": "next dev --turbopack",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "compile": "hardhat compile",
+    "deploy:calibration": "hardhat run scripts/deploy.js --network calibration",
+    "deploy:arbitrum": "hardhat run scripts/deploy.js --network arbitrumSepolia",
+    "deploy:optimism": "hardhat run scripts/deploy.js --network optimismSepolia",
+    "deploy:base": "hardhat run scripts/deploy.js --network baseSepolia"
   },
   "dependencies": {
     "@rainbow-me/rainbowkit": "^2.2.8",
     "@tanstack/react-query": "^5.83.0",
     "blocklock-js": "^1.0.0",
+    "blocklock-solidity": "^0.0.13",
     "ethers": "^6.15.0",
     "lucide-react": "^0.479.0",
     "next": "15.3.0",
@@ -24,12 +30,14 @@
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",
+    "@nomicfoundation/hardhat-toolbox": "^5.0.0",
     "@types/node": "^22.14.0",
     "@types/react": "^19",
     "@types/react-dom": "^19",
     "autoprefixer": "^10.4.21",
     "eslint": "^9",
     "eslint-config-next": "15.3.0",
+    "hardhat": "^2.26.3",
     "postcss": "^8.4.35",
     "tailwindcss": "^3.4.1",
     "typescript": "^5"
